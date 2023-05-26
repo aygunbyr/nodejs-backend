@@ -59,3 +59,39 @@ I added this gitignore file and renamed it as `.gitignore`
 
 [Node.gitignore](https://github.com/github/gitignore/blob/main/Node.gitignore)
 
+## Setup Express Server
+
+Install modules
+
+`npm install express body-parser cookie-parser compression cors`
+
+Install types of modules
+
+`npm install -D @types/express @types/body-parser @types/cookie-parser @types/compression @types/cors`
+
+Update index.ts
+
+```
+import express from 'express'
+import http from 'http'
+import bodyParser from 'body-parser'
+import cookieParser from 'cookie-parser'
+import compression from 'compression'
+import cors from 'cors'
+
+const app = express()
+
+app.use(cors({
+    credentials: true
+}))
+
+app.use(compression())
+app.use(cookieParser())
+app.use(bodyParser.json())
+
+const server = http.createServer(app)
+
+server.listen(8080, () => {
+    console.log('Server running on http://localhost:8080/')
+})
+```
