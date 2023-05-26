@@ -95,3 +95,42 @@ server.listen(8080, () => {
     console.log('Server running on http://localhost:8080/')
 })
 ```
+
+## MongoDB Setup
+
+Install mongoose
+
+`npm install mongoose`
+
+Install mongoose types
+
+`npm install -D @types/mongoose`
+
+Aside from that, I installed dotenv to hide my MONGO_URI for security concerns
+
+`npm install dotenv --save`
+
+Create `.env` file and add MONGO_URI
+
+`MONGO_URI=YOUR_MONGO_URI_HERE`
+
+Update index.ts
+
+Import dotenv
+
+```
+import dotenv from 'dotenv'
+dotenv.config()
+```
+
+Import mongoose
+
+`import mongoose from 'mongoose'`
+
+Add mongoose setup
+
+```
+mongoose.Promise = Promise;
+mongoose.connect(process.env.MONGO_URI)
+mongoose.connection.on('error', (error: Error) => console.log(error))
+```
