@@ -21,7 +21,7 @@ Install nodemon
 
 `npm install -D nodemon`
 
-Create file `tsconfig.json`
+Create file tsconfig.json
 
 ```
 {
@@ -69,7 +69,7 @@ Install types of modules
 
 `npm install -D @types/express @types/body-parser @types/cookie-parser @types/compression @types/cors`
 
-Update index.ts
+Create index.ts
 
 ```
 import express from 'express'
@@ -110,7 +110,7 @@ Aside from that, I installed dotenv to hide my MONGO_URI for security concerns
 
 `npm install dotenv --save`
 
-Create `.env` file and add MONGO_URI
+Create .env file and add MONGO_URI
 
 `MONGO_URI=YOUR_MONGO_URI_HERE`
 
