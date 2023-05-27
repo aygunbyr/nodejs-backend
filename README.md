@@ -134,3 +134,13 @@ mongoose.Promise = Promise;
 mongoose.connect(process.env.MONGO_URI)
 mongoose.connection.on('error', (error: Error) => console.log(error))
 ```
+
+## Middleware Creation
+
+Install lodash
+
+`npm install lodash`
+
+Install lodash types
+
+`npm install -D @types/lodash`
